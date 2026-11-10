@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#111110" name="theme-color"/>
+<meta content="Lada Kartashova — content creator, musician and AI explorer. Selected work, original music and creative experiments." name="description"/>
+<title>Lada Kartashova — Creative Portfolio (Editorial Concept)</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+:root {
+ --dark:#101010; --light:#f1f0eb; --on-dark:#f4f3ee; --muted-dark:#bdbbb5;
+ --on-light:#161616; --muted-light:#555650; --rule-dark:rgba(255,255,255,.23);
+ --serif:'Instrument Serif',Georgia,serif;
+ --sans:'Manrope',Arial,sans-serif;
+ --mono:'IBM Plex Mono',monospace;
+ --display:clamp(68px,10.5vw,152px);
+ --heading:clamp(42px,5vw,72px);
+ --subheading:clamp(28px,3vw,42px);
+ --body-size:15px; --meta-size:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--dark);color:var(--on-dark);font-family:var(--sans);font-size:var(--body-size);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}a:hover{opacity:.78}
+:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+::selection{background:var(--on-dark);color:var(--dark)}
+.wrap{width:min(calc(100% - 80px),1240px);margin-inline:auto}
+/* Header: one rule is attached to the header, not floating in the hero */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid var(--rule-dark)}
+.brand{font-size:14px;font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+.brand sup{font-size:9px;margin-left:2px}
+.nav{display:flex;gap:clamp(12px,2.8vw,34px);flex-wrap:wrap}
+.nav a{font:600 var(--meta-size)/1.4 var(--sans);letter-spacing:.02em}
+/* Strong serif headings; legible sans for reading; mono used only for metadata */
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(540px,72svh,780px);width:calc(100% + 80px);margin-left:-40px;padding:clamp(45px,7vw,88px) 40px 56px;display:flex;flex-direction:column;justify-content:flex-end;gap:18px;background:#111}
+.hero-video,.hero-shade{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-video{object-fit:cover;object-position:center;z-index:-2}
+.hero-shade{z-index:-1;background:linear-gradient(90deg,rgba(8,8,8,.72),rgba(8,8,8,.34) 65%,rgba(8,8,8,.18)),linear-gradient(0deg,rgba(8,8,8,.74),rgba(8,8,8,.18) 74%)}
+.hero-stamp{position:relative;z-index:1;margin-bottom:auto;color:#e0dedb;font:500 var(--meta-size)/1.5 var(--mono)}
+.hero-main{position:relative;z-index:1;max-width:1050px}
+.hero h1{font:400 var(--display)/.88 var(--serif);letter-spacing:-.045em;color:#f9f8f4;margin:0}
+.hero-intro{margin:28px 0 0;max-width:580px;color:#f6f3ef;font:500 clamp(15px,1.4vw,18px)/1.55 var(--sans);text-shadow:0 1px 6px #0008}
+.hero-bottom{position:relative;z-index:1;margin-top:16px}
+.hero-sub{font:500 14px/1.5 var(--sans);color:#f1ede8}
+.section{padding:72px 0 88px;scroll-margin-top:18px}
+.section-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 28px}
+.section-title{font:400 var(--heading)/1 var(--serif);letter-spacing:-.025em;margin:0}
+.section-no{color:var(--muted-dark);white-space:nowrap}
+.section-no,.project-tools,.tiny-caption,.music-note,.footer,.project-meta,.hero-stamp{font-size:var(--meta-size)}
+.section-no,.project-meta,.project-tools .tools-label,.tiny-caption,.music-note,.footer{font-family:var(--mono);font-weight:500}
+.work-intro{margin:0 0 30px;max-width:680px;color:var(--muted-dark);font:400 var(--body-size)/1.7 var(--sans)}
+.projects{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:start;gap:clamp(14px,1.8vw,28px)}
+.project{min-width:0;display:flex;flex-direction:column;align-items:stretch}
+.video-frame{width:100%;aspect-ratio:9/16;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:13px;background:#202020}
+.reel-video{display:block;width:100%;height:100%;object-fit:cover;background:#101010}
+.project h3{font:400 var(--subheading)/1.12 var(--serif);letter-spacing:-.02em;margin:16px 0 8px}
+.project-tools{font:500 var(--meta-size)/1.65 var(--sans);color:var(--on-dark);margin:0 0 10px}
+.project-tools span{color:var(--muted-dark);margin-right:8px;font:500 var(--meta-size)/1.5 var(--mono)}
+.project p:not(.project-tools){margin:0;font:400 var(--body-size)/1.7 var(--sans);color:var(--muted-dark)}
+.light{background:var(--light);color:var(--on-light)}
+.light .section-no,.tiny-caption{color:var(--muted-light)}
+.about-layout{display:grid;grid-template-columns:.94fr 1.06fr;gap:clamp(28px,6vw,90px)}
+.about-heading{font:400 var(--heading)/1.08 var(--serif);letter-spacing:-.025em;margin:0}
+.about-copy{font:400 var(--body-size)/1.8 var(--sans);max-width:610px}
+.about-copy p{margin:0 0 19px}
+.about-copy .last{font-weight:700;margin:25px 0 0}
+.tiny-caption{margin:22px 0 0;line-height:1.7}
+.music-intro{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:30px}
+.music-statement{font:400 var(--subheading)/1.15 var(--serif);letter-spacing:-.02em;margin:0}
+.music-description{margin:0;max-width:500px;color:var(--muted-dark);font:400 var(--body-size)/1.7 var(--sans)}
+.music-panel{padding:28px;background:#20201f;display:flex;align-items:center;justify-content:space-between;gap:30px;border:1px solid var(--rule-dark);border-radius:12px}
+.music-panel h3{font:400 var(--subheading)/1.1 var(--serif);margin:0 0 8px}
+.music-panel p{font:400 var(--body-size)/1.7 var(--sans);color:var(--muted-dark);margin:0;max-width:570px}
+.soundcloud-link{display:inline-flex;align-items:center;gap:9px;justify-content:center;padding:14px 18px;border:1px solid var(--rule-dark);border-radius:8px;font:600 var(--meta-size)/1.5 var(--sans);white-space:nowrap}
+.music-note{color:var(--muted-dark);margin:12px 0 0}
+.contact{padding-bottom:36px}
+.contact-content{padding:4px 0 55px}
+.contact-h{font:400 var(--heading)/1.06 var(--serif);letter-spacing:-.025em;margin:0 0 22px}
+.contact-h span{color:var(--muted-dark)!important;-webkit-text-stroke:0!important}
+.contact-copy{font:400 var(--body-size)/1.7 var(--sans);color:var(--muted-dark);margin:0 0 30px;max-width:630px}
+.contact-links{display:flex;flex-direction:column;border-top:1px solid var(--rule-dark)}
+.contact-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 0;border-bottom:1px solid var(--rule-dark);font:500 var(--body-size)/1.5 var(--sans);overflow-wrap:anywhere}
+.contact-address{display:inline-flex;align-items:center;gap:12px;min-width:0;flex-wrap:wrap}
+.contact-links .label{font:500 var(--meta-size)/1.5 var(--mono);color:var(--muted-dark);margin-right:8px}
+.icon{flex-shrink:0}.social-icon{width:18px;height:18px}.link-icon{margin-left:auto;width:18px}
+.footer{border-top:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;padding:20px 0 28px;color:var(--muted-dark);line-height:1.6}
+.footer a{display:inline-flex;align-items:center;gap:9px}
+.reveal{opacity:1;transform:none}
+@media(max-width:1000px){.projects{grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 24px}}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 36px)}
+ .topbar{padding:17px 0;gap:10px;align-items:flex-start}
+ .brand{font-size:12px}.nav{gap:10px 14px;justify-content:flex-end}.nav a{font-size:11px}
+ .hero{width:calc(100% + 36px);margin-left:-18px;padding:28px 18px 38px;min-height:clamp(510px,74svh,700px)}
+ .hero-video{object-position:58% center}
+ .hero-shade{background:linear-gradient(0deg,rgba(8,8,8,.82),rgba(8,8,8,.25) 80%),linear-gradient(90deg,rgba(8,8,8,.40),transparent)}
+ .hero h1{font-size:clamp(60px,12vw,98px);line-height:.94}
+ .hero-intro{font-size:15px;margin-top:24px}.hero-sub{font-size:13px}
+ .section{padding:52px 0 65px}
+ .about-layout,.music-intro{grid-template-columns:1fr;gap:24px}
+ .music-panel{flex-direction:column;align-items:stretch}.soundcloud-link{width:100%}
+ .footer{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){.projects{grid-template-columns:1fr;max-width:440px;margin-inline:auto;row-gap:42px}}
+@media(max-width:390px){.topbar{flex-wrap:wrap}.nav{justify-content:flex-start}.hero h1{font-size:clamp(50px,11vw,62px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-video{display:none}.hero{background:#151515 url('assets/hero-poster.jpg') center/cover no-repeat}}
+
+/* v24 SoundCloud embeds */
+.music-tracks { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.music-track { min-width:0; border:1px solid rgba(255,255,255,.20); border-radius:12px; padding:18px; background:#1b1b1b; }
+.music-track-head { display:flex; align-items:baseline; gap:16px; margin-bottom:15px; }
+.music-track-index { font-family:var(--mono,monospace); color:#aaa; font-size:12px; }
+.music-track-head h4 { margin:0; font-family:var(--body, sans-serif); font-size:18px; font-weight:600; }
+.music-track iframe { display:block; border:0; border-radius:6px; background:#f4f4f4; }
+.music-profile-link { margin:18px 0 0; font-size:14px; }
+.music-profile-link a { text-decoration:underline; text-underline-offset:4px; }
+@media(max-width:760px) { .music-tracks {grid-template-columns:1fr;} .music-track {padding:14px;} }
+
+
+/* v26: balanced About section; single typographic hierarchy */
+.about-layout{
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  gap:clamp(36px,6vw,92px);
+  align-items:start;
+}
+.about-heading{
+  font-family:var(--sans);
+  font-size:clamp(23px,2.35vw,30px);
+  font-weight:500;
+  line-height:1.35;
+  letter-spacing:-.035em;
+  max-width:400px;
+}
+.about-layout .tiny-caption{
+  font-size:var(--meta-size);
+  margin-top:24px;
+}
+.about-copy{max-width:620px;margin-top:0}
+.about-copy p:first-child{margin-top:0}
+@media(max-width:760px){
+  .about-layout{grid-template-columns:1fr;gap:30px}
+  .about-heading{font-size:clamp(22px,5.4vw,28px)}
+}
+</style>
+</head>
+<body>
+<div class="wrap"><header class="topbar"><a class="brand" href="#top">LADA KARTASHOVA<sup>®</sup></a><nav aria-label="Main navigation" class="nav"><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#music">MUSIC</a><a href="#contact">CONTACT</a></nav></header></div>
+<main id="top">
+<div class="wrap"><section aria-label="Introduction" class="hero"><video aria-hidden="true" autoplay="" class="hero-video" loop="" muted="" playsinline="" poster="assets/hero-poster.jpg" preload="metadata"><source src="assets/hero-loop.mp4" type="video/mp4"/></video><div aria-hidden="true" class="hero-shade"></div>
+<div class="hero-stamp">Music / Content / AI</div>
+<div class="hero-main"><h1>Lada Kartashova</h1><p class="hero-intro">I make music. And things about music.</p></div>
+<div class="hero-bottom"><span class="hero-sub">Vocalist · Music educator · Content creator</span></div>
+</section></div>
+<div class="wrap"><section aria-labelledby="work-title" class="section" id="work"><div class="section-top reveal"><h2 class="section-title" id="work-title">Selected Work<span aria-hidden="true">.</span></h2><span class="section-no">01 / Selected Work</span></div><p class="work-intro reveal">Ideas, experiments, and stories at the intersection of music, content, and AI.</p>
+<div class="projects">
+<article class="project reveal"><div class="video-frame video-player-frame"><video aria-label="01 / Fluent in Gibberish video" class="reel-video" controls="" playsinline="" poster="assets/fluent-in-gibberish.jpg" preload="none"><source src="assets/fluent-in-gibberish.mp4" type="video/mp4"/></video></div><h3>01 / Fluent in Gibberish</h3><p class="project-tools"><span>Tools</span>  ChatGPT</p><p>Turning a rough vocal demo with placeholder English into a finished chorus.</p></article>
+<article class="project reveal"><div class="video-frame video-player-frame"><video aria-label="02 / Creative Spark video" class="reel-video" controls="" playsinline="" poster="assets/creative-spark.jpg" preload="none"><source src="assets/creative-spark.mp4" type="video/mp4"/></video></div><h3>02 / Creative Spark</h3><p class="project-tools"><span>Tools</span>  ElevenLabs</p><p>Exploring how AI-generated music can spark new ideas without replacing the artist.</p></article>
+<article class="project reveal"><div class="video-frame video-player-frame"><video aria-label="03 / Different Genres video" class="reel-video" controls="" playsinline="" poster="assets/different-genres.jpg" preload="none"><source src="assets/different-genres.mp4" type="video/mp4"/></video></div><h3>03 / Different Genres</h3><p class="project-tools"><span>Tools</span>  ChatGPT + ElevenLabs</p><p>Trying musical ideas in different genres to discover unexpected directions.</p></article>
+<article class="project reveal"><div class="video-frame video-player-frame"><video aria-label="04 / Memory video" class="reel-video" controls="" playsinline="" poster="assets/memory.jpg" preload="none"><source src="assets/memory.mp4" type="video/mp4"/></video></div><h3>04 / Memory</h3><p class="project-tools"><span>Tools</span>  Higgsfield (Nano Banana, Kling) + ElevenLabs</p><p>Recreating a childhood morning through AI-generated visuals and music.</p></article>
+</div></section></div>
+<section aria-labelledby="about-title" class="section light" id="about"><div class="wrap"><div class="section-top reveal"><h2 class="section-title" id="about-title">A little about me.</h2><span class="section-no">02 / About</span></div><div class="about-layout"><div class="reveal"><h3 class="about-heading">Musician by nature.<br/>Curious by default.</h3><p class="tiny-caption">Singing · Teaching · Making · Learning</p></div><div class="about-copy reveal"><p>I'm Lada — a singer, vocal coach, and content creator who's been immersed in music for most of her life.</p><p>Over the years, I've explored music from different angles: singing, teaching, experimenting with genres, and occasionally writing my own songs.</p><p>Lately, I've been exploring how AI can become part of that creative process — not to replace human creativity, but to take it somewhere unexpected.</p><p class="last">I take music seriously. Myself? Not always.</p></div></div></div></section>
+<div class="wrap"><section aria-labelledby="music-title" class="section" id="music"><div class="section-top reveal"><h2 class="section-title" id="music-title">Original Music.</h2><span class="section-no">03 / Music</span></div><div class="music-intro reveal"><h3 class="music-statement">Sometimes I write songs, too.</h3><p class="music-description">Two original songs, a little melancholy, and a glimpse into my own musical world.</p></div><div class="music-tracks"><article class="music-track"><div class="music-track-head"><span class="music-track-index">01</span><h4>WTCCM</h4></div><iframe allow="autoplay" frameborder="0" height="166" loading="lazy" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Flada-kartashova%2Fwtccm&amp;color=%23111111&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_teaser=false&amp;visual=false" title="Listen to WTCCM on SoundCloud" width="100%"></iframe></article><article class="music-track"><div class="music-track-head"><span class="music-track-index">02</span><h4>TIE</h4></div><iframe allow="autoplay" frameborder="0" height="166" loading="lazy" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Flada-kartashova%2Ftie&amp;color=%23111111&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_teaser=false&amp;visual=false" title="Listen to TIE on SoundCloud" width="100%"></iframe></article></div><p class="music-profile-link"><a href="https://soundcloud.com/lada-kartashova" rel="noopener noreferrer" target="_blank">More on SoundCloud ↗</a></p><p class="music-note">Original recordings · Streamed via SoundCloud.</p></section>
+<section aria-labelledby="contact-title" class="section contact" id="contact"><div class="section-top reveal"><h2 class="section-title" id="contact-title">Contact.</h2><span class="section-no">04 / Contact</span></div><div class="contact-content reveal"><h3 class="contact-h">Have something<br/>in mind?<br/><span>I'm all ears.</span></h3><p class="contact-copy">For creative collaborations, music-related projects, or just to say hi.</p><div class="contact-links"><a href="mailto:lada.kartashova@hotmail.com"><span class="contact-address"><svg aria-hidden="true" class="icon social-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24" width="18"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg><span class="label">Email</span> lada.kartashova@hotmail.com</span><svg aria-hidden="true" class="icon link-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24" width="18"><path d="M7 17 17 7M8 7h9v9"></path></svg></a><a href="https://www.instagram.com/heyitsladik/" rel="noopener noreferrer" target="_blank"><span class="contact-address"><svg aria-hidden="true" class="icon social-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24" width="18"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg><span class="label">Instagram</span> @heyitsladik</span><svg aria-hidden="true" class="icon link-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24" width="18"><path d="M7 17 17 7M8 7h9v9"></path></svg></a><a href="https://www.linkedin.com/in/l-kartashova/" rel="noopener noreferrer" target="_blank"><span class="contact-address"><svg aria-hidden="true" class="icon social-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24" width="18"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M8 10v7M8 7h.01M12 17v-7M12 13a3 3 0 0 1 6 0v4"></path></svg><span class="label">LinkedIn</span> l-kartashova</span><svg aria-hidden="true" class="icon link-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24" width="18"><path d="M7 17 17 7M8 7h9v9"></path></svg></a><a href="https://soundcloud.com/lada-kartashova" rel="noopener noreferrer" target="_blank"><span class="contact-address"><svg aria-hidden="true" class="icon social-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24" width="18"><path d="M3 14v-3a9 9 0 0 1 18 0v3M3 14h4v7H5a2 2 0 0 1-2-2zm18 0h-4v7h2a2 2 0 0 0 2-2z"></path></svg><span class="label">SoundCloud</span> lada-kartashova</span><svg aria-hidden="true" class="icon link-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24" width="18"><path d="M7 17 17 7M8 7h9v9"></path></svg></a></div></div></section><footer class="footer"><span>© 2026 Lada Kartashova</span><span>Made with curiosity. And a little bit of code.</span><a href="#top">Back to top <svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24" width="18"><path d="M12 19V5m-6 6 6-6 6 6"></path></svg></a></footer></div>
+</main>
+</body></html>
